@@ -1,4 +1,4 @@
-const TheirMessage = ( lastMessage, message) => {
+const TheirMessage = ( {lastMessage, message}) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
 
     return (
@@ -20,13 +20,12 @@ const TheirMessage = ( lastMessage, message) => {
                            style={{ marginLeft: isFirstMessageByUser ? '4px' : '48px' }}
                         />
                     ) : (
+                        // display it on the left
                         <div className="message" style={{ float: 'left', backgroundColor: 'green', marginLeft: isFirstMessageByUser ? '4px' : '48px'  }}>
                             {message.text}
                          </div>
                     )
                 }
-
-            TheirMessage
         </div>
     )
 }
