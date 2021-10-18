@@ -2,6 +2,11 @@
 
 This is a mobile-responsive messaging app built using create-reatc-app and leverages the use of [ChatEngine](https://chatengine.io/) to provide an interactive communication experience. https://happy-davinci-4bd16c.netlify.app/
 
+I encourage you to read the [Docs](https://chatengine.io/docs) to get a deeper understanding of how it works.
+
+For a quick overview, watch this introductory [Video](https://www.youtube.com/watch?v=nNIHRmKhsRA&t=431s) by the creator of the chat engine
+
+
 ## Implemented Features
 
 
