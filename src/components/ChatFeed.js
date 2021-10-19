@@ -1,3 +1,4 @@
+import LogoutForm from './LogoutForm';
 import MessageForm from './MessageForm';
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
@@ -30,7 +31,9 @@ const ChatFeed = (props) => {
             
 
             return (
+                
                 <div key={`msg_${index}`} style={{width: '100%' }}>
+                    
                     <div className="message-block">
                         {
                             isMyMessage
@@ -51,6 +54,7 @@ const ChatFeed = (props) => {
 
 
     return (
+        <>
         <div className="chat-feed">
             <div className="chat-title-container">
                 <div className="chat-title">{chat.title}</div>
@@ -64,6 +68,8 @@ const ChatFeed = (props) => {
                 <MessageForm {...props} chatId={activeChat} />
             </div>
         </div>
+        <LogoutForm />
+        </>
     );
 }
 
