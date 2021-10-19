@@ -2,7 +2,7 @@ const LogoutForm = () => {
   
     const handleLogout = () => {
         localStorage.clear();
-        window.location.href = '/login'
+        window.location.href = '/'
     }
         return (
             <button className="logout-button" onClick={handleLogout}>Logout</button>
