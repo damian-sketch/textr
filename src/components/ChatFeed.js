@@ -6,12 +6,11 @@ import { useContext } from 'react'
 import { ChatEngineContext, IsTyping } from 'react-chat-engine'
 
 const ChatFeed = (props) => {
-    const { chats, activeChat, userName, messages} = props;
-
+    // destructure the props
+    const { chats, activeChat, userName, messages, renderIsTyping} = props;
     const chat = chats && chats[activeChat];
     const {typingCounter} = useContext(ChatEngineContext)
     const typers = typingCounter && typingCounter[activeChat] ? typingCounter[activeChat] : []
-    console.log(chat)
     
     // function to render read receipts
     const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (
@@ -25,6 +24,7 @@ const ChatFeed = (props) => {
         />
       ));
 
+      // function to render messages
     const renderMessages = () => {
         const keys = Object.keys(messages);
         return keys.map((key, index) => {
@@ -37,7 +37,6 @@ const ChatFeed = (props) => {
             return (
                 
                 <div key={`msg_${index}`} style={{width: '100%' }}>
-                    
                     <div className="message-block">
                         {
                             isMyMessage
@@ -68,7 +67,7 @@ const ChatFeed = (props) => {
             {renderMessages()}
             <div style={{ height: '100px' }} />
             <div className="message-form-container">
-            <div className="isTyping">{props.renderIsTyping ? props.renderIsTyping(typers) : <IsTyping />}</div>
+            <div className="isTyping">{renderIsTyping ? renderIsTyping(typers) : <IsTyping />}</div>
                 <MessageForm {...props} chatId={activeChat} />
             </div>
         </div>
