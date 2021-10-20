@@ -1,9 +1,10 @@
-import LogoutForm from './LogoutForm';
-import MessageForm from './MessageForm';
-import MyMessage from './MyMessage';
-import TheirMessage from './TheirMessage';
+import LogoutForm from '../logout/LogoutForm';
+import MessageForm from '../messageform/MessageForm';
+import MyMessage from '../mymessage/MyMessage';
+import TheirMessage from '../theirmessage/TheirMessage';
 import { useContext } from 'react'
 import { ChatEngineContext, IsTyping } from 'react-chat-engine'
+import './styles.css'
 
 const ChatFeed = (props) => {
     // destructure the props

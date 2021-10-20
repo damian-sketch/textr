@@ -1,6 +1,6 @@
 import { ChatEngine, IsTyping } from 'react-chat-engine'
-import ChatFeed from './components/ChatFeed'
-import LoginForm from './components/LoginForm'
+import ChatFeed from './components/chatfeed/ChatFeed'
+import LoginForm from './components/login/LoginForm'
 import './App.css'
 
 const App = () => {

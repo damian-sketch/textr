@@ -1,0 +1,22 @@
+
+.ce-chats-container {
+    background-color: rgb(8, 10, 24) !important;
+    border-radius: 0px !important;
+  }
+  
+
+.ce-chat-form-container {
+   padding-bottom: 20px !important;
+   background-color: rgb(8, 10, 24) !important ;
+   color: white !important;
+  }
+
+  .ce-active-chat-card {
+    background-color: #d37b16 !important;
+    border: 4px solid #d37b16 !important;
+    border-radius: 0px !important;
+  }
+  
+  .ce-chat-subtitle-text {
+    color: #595959 !important;
+  }
