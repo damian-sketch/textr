@@ -2,11 +2,15 @@ import LogoutForm from './LogoutForm';
 import MessageForm from './MessageForm';
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
+import { useContext } from 'react'
+import { ChatEngineContext, IsTyping } from 'react-chat-engine'
 
 const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages} = props;
 
     const chat = chats && chats[activeChat];
+    const {typingCounter} = useContext(ChatEngineContext)
+    const typers = typingCounter && typingCounter[activeChat] ? typingCounter[activeChat] : []
     console.log(chat)
     
     // function to render read receipts
@@ -41,7 +45,6 @@ const ChatFeed = (props) => {
                             : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} /> 
                         }
                     </div>
-
                     <div className="read-receipts" style={{ marginRight: isMyMessage? '18px': '0px', marginLeft: isMyMessage ? '0px': '68px'}}>
                          {renderReadReceipts(message, isMyMessage)}     
                    </div>    
@@ -65,6 +68,7 @@ const ChatFeed = (props) => {
             {renderMessages()}
             <div style={{ height: '100px' }} />
             <div className="message-form-container">
+            <div className="isTyping">{props.renderIsTyping ? props.renderIsTyping(typers) : <IsTyping />}</div>
                 <MessageForm {...props} chatId={activeChat} />
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { ChatEngine } from 'react-chat-engine'
+import { ChatEngine, IsTyping } from 'react-chat-engine'
 import ChatFeed from './components/ChatFeed'
 import LoginForm from './components/LoginForm'
 import './App.css'
@@ -9,10 +9,11 @@ const App = () => {
   return (
     <ChatEngine
        height="100vh"
-       projectID="b507829d-95f0-4fea-adee-02774e7ad823"
+       projectID={process.env.REACT_APP_PROJECT_ID}
        userName={localStorage.getItem('username')}
        userSecret={localStorage.getItem('password')}
        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+       renderIsTyping={(typers) => <IsTyping />}
     />
   )
 }
