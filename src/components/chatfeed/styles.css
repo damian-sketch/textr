@@ -17,6 +17,65 @@
     border-radius: 0px !important;
   }
   
+.ce-chat-title-text {
+    color: white ;
+}  
   .ce-chat-subtitle-text {
-    color: #595959 !important;
+    color: white !important;
+  }
+
+.chat-feed {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: rgb(240, 240, 240);
+  }
+  
+.chat-title-container {
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+    background-color: rgb(8, 10, 24) ;
+  }
+  
+  .chat-title {
+    color: white;
+    font-weight: 800;
+    font-size: 24px;
+  }
+  
+  .chat-subtitle {
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    padding-top: 4px;
+  }
+
+.logout-button {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    background-color:#cf5c0f;
+    border-radius: 5px;
+   }
+  
+.logout-button:hover {
+    cursor: pointer;
+    background-color: white;
+ }  
+
+ .message-row {
+    float: left;
+    width: 100%;
+    display: flex;
+    margin-left: 18px;
+  }
+  
+  .message-block {
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block;
   }
