@@ -10,12 +10,15 @@ For a quick overview, watch this introductory [Video](https://www.youtube.com/wa
 ## Implemented Features
 
 
-### Login
+### Login and Logout
 
-Users can login and view conversations
+Users can login and view conversations adn logout once done
 
 ### Group chat
 Users can send and receive chats in groups
+
+### isTyping
+Users can see when other users are typing
 
 
 
