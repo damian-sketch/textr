@@ -10,9 +10,9 @@ For a quick overview, watch this introductory [Video](https://www.youtube.com/wa
 ## Implemented Features
 
 
-### Login and Logout
+### Signup, Login and Logout
 
-Users can login and view conversations adn logout once done
+Users can create an account, login and view conversations and logout once done
 
 ### Group chat
 Users can send and receive chats in groups
