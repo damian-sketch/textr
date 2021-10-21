@@ -54,9 +54,10 @@ const LoginForm = () => {
                         </div>
                         <h2 className="error"> {error} </h2>
                     </form>
-                    <button onClick={togglePopup}>Sign up</button>
+                    <button className="signup-button" onClick={togglePopup}>Get an account</button>
 
-                    {isOpen && <SignupForm />}
+                    {isOpen && <SignupForm handleClose={togglePopup} />}
+                    
                 </div>
             </div>
          

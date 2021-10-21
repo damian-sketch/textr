@@ -53,8 +53,12 @@ const ChatFeed = (props) => {
         })
     }
 
-    if(!chat) return 'Loading...'
-
+    if(!chat) return (
+        <>
+        <p>Create a conversation to start chatting!</p> 
+        <LogoutForm />
+        </>
+        )
 
     return (
         <>
