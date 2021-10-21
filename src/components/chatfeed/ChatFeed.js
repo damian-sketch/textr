@@ -55,7 +55,7 @@ const ChatFeed = (props) => {
 
     if(!chat) return (
         <>
-        <p>Create a conversation to start chatting!</p> 
+        <p style={{textAlign: 'center', marginTop: '70px', fontSize: 'larger', fontWeight :'bolder'}}>Create a conversation to start chatting!</p> 
         <LogoutForm />
         </>
         )
