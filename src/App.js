@@ -4,9 +4,11 @@ import LoginForm from './components/login/LoginForm'
 import './App.css'
 
 const App = () => {
+  // if not logged in return log in form
   if(!localStorage.getItem('username')) return <LoginForm/>
 
   return (
+    
     <ChatEngine
        height="100vh"
        projectID={process.env.REACT_APP_PROJECT_ID}
