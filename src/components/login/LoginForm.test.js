@@ -7,8 +7,8 @@ afterEach(cleanup)
 
 // test case
 it('should verify login button is displayed', () => {
-    const { getByTestId } = render(<LoginForm />)
+    const { getByTitle } = render(<LoginForm />)
 
-    //make sure Login button containd Login text(this means form is displayed)
-    expect(getByTestId('login-button')).toHaveTextContent('Login')
+    //make sure Login button contains Login text(this means form is displayed)
+    expect(getByTitle('login-button')).toHaveTextContent('Login')
 })
