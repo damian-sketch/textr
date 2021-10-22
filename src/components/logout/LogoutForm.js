@@ -5,7 +5,7 @@ const LogoutForm = () => {
         window.location.href = '/'
     }
         return (
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <button data-testid="logout-btn" className="logout-button" onClick={handleLogout}>Logout</button>
         )
     };
 
