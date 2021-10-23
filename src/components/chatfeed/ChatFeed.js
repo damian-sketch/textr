@@ -3,16 +3,18 @@ import MessageForm from '../messageform/MessageForm';
 import MyMessage from '../mymessage/MyMessage';
 import TheirMessage from '../theirmessage/TheirMessage';
 import { useContext } from 'react'
-import { ChatEngineContext, IsTyping } from 'react-chat-engine'
+import { ChatEngineContext, IsTyping, getOrCreateChat } from 'react-chat-engine'
 import './styles.css'
 
 const ChatFeed = (props) => {
     // destructure the props
     const { chats, activeChat, userName, messages, renderIsTyping} = props;
     const chat = chats && chats[activeChat];
+    // console.log(chat.is_direct_chat)
     const {typingCounter} = useContext(ChatEngineContext)
     const typers = typingCounter && typingCounter[activeChat] ? typingCounter[activeChat] : []
-    
+
+
     // function to render read receipts
     const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (
         <div
@@ -27,6 +29,7 @@ const ChatFeed = (props) => {
 
       // function to render messages
     const renderMessages = () => {
+
         const keys = Object.keys(messages);
         return keys.map((key, index) => {
             const message = messages[key];
@@ -62,6 +65,7 @@ const ChatFeed = (props) => {
 
     return (
         <>
+
         <div className="chat-feed">
             <div className="chat-title-container">
                 <div className="chat-title">{chat.title}</div>
