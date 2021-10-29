@@ -1,4 +1,4 @@
-import {render, cleanup, fireEvent, screen, waitFor} from '@testing-library/react'
+import {render, cleanup, screen, waitFor} from '@testing-library/react'
 import LoginForm from './LoginForm'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event';
@@ -29,8 +29,24 @@ it('should verify that existing user can login successfully', async () => {
         // login existing user
         userEvent.type(inputuser, username);
         userEvent.type(inputpass, password);
-        fireEvent.click(getByTitle('login-button'));
+        userEvent.click(getByTitle('login-button'));
         await waitFor (() => expect(getByTestId('logout-btn')).toBeInTheDocument()) // verify logout button is displayed
         
     
+})
+
+// verify user cannot login with invalid credentials
+it('should verify that a user cannot login with non-existent credentials', async () => {
+        const { getByTitle, getByTestId } = render(<LoginForm />)
+        const inputuser = screen.getByTestId('username');
+        const inputpass = screen.getByTestId('password');
+        const username = 'testuser'; // use any invalid username
+        const password = 'polo'; // use any invalid password
+
+        // login existing user
+        userEvent.type(inputuser, username);
+        userEvent.type(inputpass, password);
+        userEvent.click(getByTitle('login-button'));
+        await waitFor (() => expect(getByTestId('error')).toBeInTheDocument())
+
 })

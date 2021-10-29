@@ -52,7 +52,7 @@ const LoginForm = () => {
                                 <span>Login</span>
                             </button>
                         </div>
-                        <h2 className="error"> {error} </h2>
+                        <h2 data-testid="error" className="error"> {error} </h2>
                     </form>
                     <button className="signup-button" onClick={togglePopup}>Get an account</button>
 
